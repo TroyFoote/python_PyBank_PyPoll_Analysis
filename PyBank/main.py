@@ -1,6 +1,6 @@
-# Pybank Script
+#Pybank Script
 
-# #import os module
+#import os module
 import os
 
 #import csv module
@@ -16,9 +16,6 @@ previous_month_profit_loss = 0
 total_profit_loss_change = 0 #total of differences between months profit and loss
 change_count = 0
 first_row = True
-
-
-
 
 #import csv file from computer
 budget_data_csv = os.path.join("Resources", "budget_data.csv")
@@ -65,8 +62,6 @@ with open(budget_data_csv) as csv_file:
     #find the average change in profit/loss between current and previous months
     ave_profit_loss_change = round(total_profit_loss_change / change_count, 2)
 
-
-
     #print analysis report
     print("Financial Analysis")
     print("_____________________________________")
@@ -82,6 +77,7 @@ with open(budget_data_csv) as csv_file:
 output_file = os.path.join("Analysis", "Final_Analysis.txt")
 with open(output_file, "w") as results:
 
+#write analysis report to txt file
     results.write("Financial Analysis\n")
     results.write("_____________________________________\n")
     results.write(f"Total Months: {month_count}\n")
@@ -92,25 +88,5 @@ with open(output_file, "w") as results:
     results.write(f"Greatest Decrease in Profits: {lowest_month } ${greatest_decrease_profit_loss}\n")   
     
 
-
-      
-    
-    
-    
-    
-    
-    #total months & profit loss totals included in report
-    #print(month_count)
-    #print(total_profit_loss)   
-    #print(total_profit_loss_change)
-    
-    #print(current_month_profit_loss)
-    #print(change_count)
-    
-    #print(ave_profit_loss_change)
-    #print(profit_loss_changes)
-    #print(months)
-    #print(greatest_increase_profit_loss)
-    #print(greatest_decrease_profit_loss)
-    #print(highest_month)
-    #print(lowest_month)
+#In the PyBank instructions it asks for (The changes in "Profit/Losses" over the entire period, and then the average of those changes) 
+#So i have included both the Profit/Losses and the average for the entire period in the Analysis report.
