@@ -34,50 +34,38 @@ with open(election_data_csv) as csv_file:
             candidate_list.append(candidate_name)
             candidate_votes[candidate_name]= 0
         candidate_votes[candidate_name]+=1
-        
-    #print election results        
-    print(f"Election Results")    
-    print(f"_________________________")
-    print(f"Total Votes: {total_votes}") 
-    print(f"_________________________")
 
+    output_candidates = ""    
     #percentage of votes per candidate
     for name in candidate_votes:
         votes = candidate_votes[name]
         percentage = votes / total_votes
         percent = round(percentage *100 ,3)
-
-        #print results
-        print(f"{name} : {percent}%, {votes}")
-
+        output_candidates += f"{name} : {percent}%, {votes}\n"
         #find winner
         if votes > win_votes:
             win_votes = votes
             winner = name
-
-           
     
-    #print winner results
-    print(f"_________________________")
-
-    print(f"Winner: {winner}")
-
-    print(f"_________________________")
-
+    output_text = (      
+    f"Election Results\n"    
+    f"_________________________\n"
+    f"Total Votes: {total_votes}\n" 
+    f"_________________________\n"
+    f"{output_candidates}"
+    f"_________________________\n"
+    f"Winner: {winner}\n"
+    f"_________________________\n"
+    )
+    print(output_text, end="")
 
 #output file to Analysis folder
 output_file = os.path.join("Analysis", "Election_Analysis.txt")
 with open(output_file, "w") as results:
+    results.write(output_text)
 
-    #write analysis report to txt file
-    results.write("Election Results\n")
-    results.write(f"____________________\n")
-    results.write(f"Total Votes: {total_votes}\n") 
-    results.write(f"_________________________\n")
-    results.write(f"{name} : {percent}%, {votes}\n")
-    results.write(f"_________________________\n")
-    results.write(f"Winner: {winner}\n")
-    results.write(f"_________________________\n")
+
+ 
 
 
 
