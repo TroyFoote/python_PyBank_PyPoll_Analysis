@@ -3,7 +3,6 @@ Module 3 challenge
 
 
 PyBank 
-
 Create a Python script to analyse the financial records of your company. You will be given a financial dataset called budget_data.csv. The dataset is composed of two columns: "Date" and "Profit/Losses".
 
 Your task is to create a Python script that analyses the records to calculate each of the following values:
@@ -22,7 +21,6 @@ In addition, your final script should both print the analysis to the terminal an
 
 
 PyPoll
-
 Create a Python script to modernise the vote counting process of a small, rural U.S. town.
 
 You will be given a set of poll data called election_data.csv. The dataset is composed of three columns: "Voter ID", "County", and "Candidate". Your task is to create a Python script that analyzes the votes and calculates each of the following values:
